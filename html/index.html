@@ -1,0 +1,126 @@
+<!-- Spotify API Handling Reference: https://github.com/awicks44/JavaScript-SpotifyAPI/tree/master -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuSel Playlist Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <header>
+      <a href="../html/index.html">
+        <img src="../assets/logo.png" id="h-logo" alt="logo">
+      </a>
+      <h1>MuSel Playlist Generator</h1>
+    </header>
+    <main>
+      <section id="generate-main">
+
+        <img src="../assets/thomas-lefebvre-97ITQ0P12XM-unsplash.jpg" id="blur-img" alt="background blur image">
+
+        <h2>Make a MuSel for your Mood</h2>
+
+        <!--Experiment here with a way to show a suggestions dropdown and limit by genre/subgenre-->
+        <div class="form-container">
+          <form>
+            <input type="text" class="text-entry" placeholder="Select up to 5 genres as an inspiration...">
+            <button type="submit" class="generate-button">Submit</button>
+          </form>
+        </div>
+      </section>
+      <section id="generate-explanation">
+        <h2>What Is This Tool?</h2>
+        <p>
+          MuSel is a tool that generates a Spotify playlist for you based on what you're feeling like listening to.<br>
+          Generate just based off a set of just your desired music genres, or feel free to get as specific as you like!
+        </p>
+      </section>
+      <section id="generate-filters">
+        <h2>Filters</h2>
+        <!--Artists and Songs may have to be Spotify IDs.-->
+        <!-- <div class="entry-container">
+          <h3>Artist Inspiration</h3>
+          <form>
+            <input type="text" class="text-entry" placeholder="Select up to 5 Artists...">
+            <button type="submit" class="generate-button">Submit</button>
+          </form>
+        </div>
+        <div class="entry-container">
+          <h3>Song Inspiration</h3>
+          <form>
+            <input type="text" class="text-entry" placeholder="Select up to 5 Songs...">
+            <button type="submit" class="generate-button">Submit</button>
+          </form>
+        </div> -->
+        <div class="slider-container">
+          <h3>Acousticness</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="acoustic" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="acoustic-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Danceability</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="dance" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="dance-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Energy</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="energy" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="energy-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Instrumentalness</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="instrument" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="instrument-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Liveness</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="live" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="live-value">0.5</span></p> -->
+        </div>
+        <!--I'm iffy on the values for this one-->
+        <div class="slider-container">
+          <h3>Loudness</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="loud" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="loud-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Speechiness</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="speech" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="speech-value">0.5</span></p> -->
+        </div>
+        <!--I'm iffy on the values for this one-->
+        <div class="slider-container">
+          <h3>Tempo</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="tempo" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="tempo-value">0.5</span></p> -->
+        </div>
+        <div class="slider-container">
+          <h3>Valence</h3>
+          <!-- <label for="slider">Select a value:</label> -->
+          <input type="range" id="valence" min="0" max="1" step="0.1" value="0.5">
+          <!-- <p>Selected value: <span id="valence-value">0.5</span></p> -->
+        </div>
+        <div class="entry-container">
+          <h3>Playlist Length</h3>
+          <form>
+            <input type="text" class="text-entry" placeholder="10">
+            <button type="submit" class="generate-button">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

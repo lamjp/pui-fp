@@ -1,0 +1,129 @@
+/*Mobile First*/
+html {
+  background-color: rgb(34,24,28);
+}
+
+body {
+  margin: 0 auto;
+  max-width: 375px;
+  color: rgb(255,232,209);
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+}
+
+/* Header */
+#h-logo {
+  width: 60px;
+  margin: 15px;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
+
+/* body */
+body h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Section 1 */
+#generate-main {
+  position: relative;
+}
+
+#blur-img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+#generate-main h2 {
+  position: absolute;
+  width: 70%;
+  top: 50%; /* Adjust as needed to vertically center within the image */
+  left: 50%; /* Adjust as needed to horizontally center within the image */
+  transform: translate(-50%, -400%); /* Center the text precisely */
+  z-index: 1; /* Ensure the text is above the image */
+}
+
+.form-container {
+  /* Add styles for the form container as needed */
+  text-align: center; /* Center the form within its container */
+  position: absolute;
+  width: 70%;
+  top: 50%; /* Adjust as needed to vertically center within the image */
+  left: 50%; /* Adjust as needed to horizontally center within the image */
+  transform: translate(-50%, -50%); /* Center the text precisely */
+  z-index: 1; /* Ensure the text is above the image */
+}
+
+.text-entry {
+  /* Add styles for the text input as needed */
+}
+
+.generate-button {
+  /* Add styles for the submit button as needed */
+}
+
+/* Section 2 */
+#generate-explanation {
+
+}
+#generate-explanation p {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* Section 3 */
+#generate-filters {
+  /* Add styles for the section container if needed */
+  text-align: center; /* Center the content within the section */
+}
+
+.slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px; /* Adjust as needed for spacing between sliders */
+}
+
+h3 {
+  display: inline;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(246,202,131);
+  margin: 20px 10px 20px 0;
+}
+
+
+
+/* Add more specific styles for your sliders if needed */
+input[type="range"] {
+  display: inline-block;
+  width: 200px; /* Adjust as needed for the width of the sliders */
+  margin-right: 20px;
+}
+
+.entry-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px; /* Adjust as needed for spacing between sliders */
+}
+
+/* Add more specific styles for your sliders if needed */
+.entry-container input[type="text"] {
+  display: inline-block;
+  width: 30px; /* Adjust as needed for the width of the sliders */
+  margin-right: 20px;
+}
+
+.entry-container [type="submit"] {
+  display: inline-block;
+  width: auto; /* Adjust as needed for the width of the sliders */
+  margin-right: 20px;
+}
