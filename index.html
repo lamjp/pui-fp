@@ -1,0 +1,117 @@
+<!-- Spotify API Handling Reference: https://github.com/awicks44/JavaScript-SpotifyAPI/tree/master -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuSel Playlist Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">
+        <img src="./assets/logo.png" id="h-logo" alt="logo">
+      </a>
+      <h1>MuSel Playlist Generator</h1>
+    </header>
+    <main>
+      <section id="generate-main">
+
+        <img src="./assets/thomas-lefebvre-97ITQ0P12XM-unsplash.jpg" id="blur-img" alt="background blur image">
+        
+        <h2>Make a MuSel for your Mood</h2>
+
+        <div id="list-space"></div>
+
+        <!--Experiment here with a way to show a suggestions dropdown and limit by genre/subgenre-->
+        <div id="form-container">
+          <form>
+            <label for="genres" class="visually-hidden">Select up to 5 genres</label>
+            <input type="text" id="genres"class="text-entry" placeholder="Select up to 5 genres...">
+            <button type="submit" class="generate-button">Generate</button>
+          </form>
+        </div>
+      </section>
+      <section id="generate-explanation">
+        <h2>What Is This Tool?</h2>
+        <p>
+          MuSel is a tool that generates a Spotify playlist for you based on what you're feeling like listening to.
+          Generate just based off a set of just your desired music genres, or feel free to get as specific as you like!
+        </p>
+      </section>
+      <section id="generate-filters">
+        <h2>Filters</h2>
+        <!-- Skipped out on the artist and song seeds, didn't know how to get them properly -->
+        <div id="filter-container">
+          <div class="slider-container">
+            <label for="acoustic">Acousticness</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="acoustic" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="acoustic-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="dance">Danceability</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="dance" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="dance-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="energy">Energy</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="energy" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="energy-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="instrument">Instrumentalness</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="instrument" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="instrument-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="live">Liveness</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="live" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="live-value">0.5</span></p> -->
+          </div>
+          <!--I'm iffy on the values for this one-->
+          <div class="slider-container">
+            <label for="loud">Loudness</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="loud" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="loud-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="speech">Speechiness</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="speech" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="speech-value">0.5</span></p> -->
+          </div>
+          <!--I'm iffy on the values for this one-->
+          <div class="slider-container">
+            <label for="tempo">Tempo</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="tempo" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="tempo-value">0.5</span></p> -->
+          </div>
+          <div class="slider-container">
+            <label for="valence">Valence</label>
+            <!-- <label for="slider">Select a value:</label> -->
+            <input type="range" id="valence" min="0" max="1" step="0.1" value="0.5">
+            <!-- <p>Selected value: <span id="valence-value">0.5</span></p> -->
+          </div>
+          <div class="entry-container">
+            <label for="text-entry">Playlist Length</label>
+            <form>
+              <input type="text" id="text-entry" placeholder="10">
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

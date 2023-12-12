@@ -1,3 +1,14 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /*Mobile First*/
 html {
   background-color: rgb(34,24,28);
@@ -42,35 +53,53 @@ body h2 {
 #generate-main h2 {
   position: absolute;
   width: 70%;
-  top: 50%; /* Adjust as needed to vertically center within the image */
-  left: 50%; /* Adjust as needed to horizontally center within the image */
-  transform: translate(-50%, -400%); /* Center the text precisely */
-  z-index: 1; /* Ensure the text is above the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -400%);
+  z-index: 1; /* Ensure text is above the image */
 }
 
-.form-container {
-  /* Add styles for the form container as needed */
-  text-align: center; /* Center the form within its container */
+#form-container {
+  text-align: center;
   position: absolute;
   width: 70%;
-  top: 50%; /* Adjust as needed to vertically center within the image */
-  left: 50%; /* Adjust as needed to horizontally center within the image */
-  transform: translate(-50%, -50%); /* Center the text precisely */
-  z-index: 1; /* Ensure the text is above the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: rgb(34,24,28,.7);
+  height: 25px;
+  padding: 10px;
+  border-radius: 10px;
 }
-
-.text-entry {
-  /* Add styles for the text input as needed */
+#form-container form {
+  margin: 0;
 }
-
-.generate-button {
-  /* Add styles for the submit button as needed */
+#form-container input {
+  width: 185px;
+  background-color: rgb(000,000,000,.0);
+  border: none;
+  color: rgb(255,232,209);
+  outline: none;
+}
+#form-container input::placeholder {
+  color: rgb(255,232,209,.7);
+  font-style: italic;
+  font-weight: 300;
+}
+#form-container button {
+  background-color:#06a77d;
+  border: none;
+  border-radius: 7px;
+  color: rgb(34,24,28);
+  font-weight: 500;
+  height: 30px;
+  width: 70px;
+  padding: 0;
+  margin: -3px -3px auto auto;
 }
 
 /* Section 2 */
-#generate-explanation {
-
-}
 #generate-explanation p {
   font-size: 14px;
   margin-top: 0;
@@ -78,8 +107,14 @@ body h2 {
 
 /* Section 3 */
 #generate-filters {
-  /* Add styles for the section container if needed */
-  text-align: center; /* Center the content within the section */
+  text-align: center;
+}
+#generate-filters h2{
+  margin-bottom: 0px;
+}
+#filter-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .slider-container {
@@ -90,7 +125,7 @@ body h2 {
   margin: 10px; /* Adjust as needed for spacing between sliders */
 }
 
-h3 {
+.slider-container label, .entry-container label {
   display: inline;
   font-size: 14px;
   font-weight: 400;
@@ -98,32 +133,175 @@ h3 {
   margin: 20px 10px 20px 0;
 }
 
-
-
-/* Add more specific styles for your sliders if needed */
+/*********** Baseline, reset styles ***********/
 input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
   display: inline-block;
-  width: 200px; /* Adjust as needed for the width of the sliders */
+  width: 200px;
   margin-right: 20px;
 }
 
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #06a77d;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -4px; /* Centers thumb on the track */
+  background-color: #06a77d;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid #06a77d;
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #06a77d;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: #06a77d;
+  border: none;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb{
+  outline: 3px solid #06a77d;
+  outline-offset: 0.125rem;
+}
+
+
+/* Entry boxes */
 .entry-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px; /* Adjust as needed for spacing between sliders */
+  margin: 10px;
 }
 
-/* Add more specific styles for your sliders if needed */
 .entry-container input[type="text"] {
   display: inline-block;
-  width: 30px; /* Adjust as needed for the width of the sliders */
+  width: 70px;
   margin-right: 20px;
 }
 
-.entry-container [type="submit"] {
-  display: inline-block;
-  width: auto; /* Adjust as needed for the width of the sliders */
-  margin-right: 20px;
+/*Desktop View*/
+@media screen and (min-width:720px) {
+  body {
+    max-width: 720px;
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 15px;
+  }
+  header a {
+    display: block;
+    position: absolute;
+    height: 90px;
+    top: -5px;
+  }
+
+  #h-logo {
+    width: 60px;
+  }
+
+  h1 {
+    display: block;
+    font-size: 24px;
+    margin: 30px auto;
+  }
+
+  /* body */
+  body h2 {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  /* Section 1 */
+  #generate-main {
+    position: relative;
+  }
+  
+  #generate-main h2 {
+    transform: translate(-50%, -300%);
+  }
+  
+  #form-container {
+    width: 50%;
+    transform: translate(-50%, 100%);
+  }
+  #form-container input {
+    width: 280px;
+  }
+  
+  /* Section 2 */
+  #generate-explanation {
+    margin: 0 auto;
+    width: 80%;
+  }
+  #generate-explanation p {
+    font-size: 14px;
+    margin-top: 0;
+  }
+  /* Section 3 */
+  #generate-filters {
+    margin-bottom: 50px;
+  }
+  #filter-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .slider-container, .entry-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto; /* Adjust as needed for spacing between sliders */
+  }
+  .slider-container h2 {
+    display: block;
+    position: absolute;
+  }
+  
+  .slider-container label, .entry-container label {
+    margin: 20px 10px 20px 10px;
+  }
+
+  input[type="range"] {
+    margin: auto;
+  }
+  .entry-container input[type="text"] {
+    width: 70px;
+    margin: auto;
+  }
 }
