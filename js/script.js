@@ -68,6 +68,9 @@ function addTextEntryEventListener() {
       if (value > 50){
         value = 20;
         alert('Please don\'t input a value above 50');
+      } else if (value < 1){
+        value = 20;
+        alert('Please don\'t input a value below 1');
       } else {
       // Show an alert to the user
       alert(`Playlist length set to: ${value}`);
@@ -138,9 +141,9 @@ function buildSpotifyRequestURL() {
   const popularityValue = document.getElementById('popularity').value;
   const valenceValue = document.getElementById('valence').value;
   let playlistLengthValue = document.getElementById('text-entry').value || 20; // Default to 20 if not provided
-  if (playlistLengthValue > 50){
+  if (playlistLengthValue > 50 || playlistLengthValue < 1){
     playlistLengthValue = 20;
-    console.log(`length-value too long, reset to: ` + playlistLengthValue);
+    console.log(`length-value invalid, reset to: ` + playlistLengthValue);
   }
   // Extract the selected genre
   const selectedGenre = document.getElementById('genres').value;
