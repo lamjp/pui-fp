@@ -63,11 +63,15 @@ function addTextEntryEventListener() {
     if (event.key === 'Enter') {
       event.preventDefault();
 
-      const value = textEntryInput.value;
+      let value = textEntryInput.value;
       console.log(`length value: ${value}`);
-
+      if (value > 50){
+        value = 20;
+        alert('Please don\'t input a value above 50');
+      } else {
       // Show an alert to the user
       alert(`Playlist length set to: ${value}`);
+      }
     }
   });
 }
@@ -105,6 +109,8 @@ fetch('./js/suggestions.json')
         listItem.textContent = genre;
         listItem.addEventListener('click', function () {
           genreInput.value = genre;
+          console.log(`Selected genre: ${genre}`);
+          alert(`Genre set to: ${genre}`);
           genreDropdown.innerHTML = ''; // Clear the dropdown after selection
         });
         genreDropdown.appendChild(listItem);
@@ -131,8 +137,11 @@ function buildSpotifyRequestURL() {
   const speechValue = document.getElementById('speech').value;
   const popularityValue = document.getElementById('popularity').value;
   const valenceValue = document.getElementById('valence').value;
-  const playlistLengthValue = document.getElementById('text-entry').value || 20; // Default to 20 if not provided
-
+  let playlistLengthValue = document.getElementById('text-entry').value || 20; // Default to 20 if not provided
+  if (playlistLengthValue > 50){
+    playlistLengthValue = 20;
+    console.log(`length-value too long, reset to: ` + playlistLengthValue);
+  }
   // Extract the selected genre
   const selectedGenre = document.getElementById('genres').value;
 
@@ -257,7 +266,6 @@ function displayRecommendationsPopup(data) {
   // Add the popup container to the body
   document.body.appendChild(popupContainer);
 }
-
 
 window.addEventListener('load', (event) => {
   // call function to add for genre
