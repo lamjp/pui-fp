@@ -171,6 +171,7 @@ function buildSpotifyRequestURL() {
   return spotifyRequestURL;
 }
 
+// event listener and function that builds the API recommendations request and sends it
 document.querySelector('form').addEventListener('submit', async function (event) {
   event.preventDefault(); // Prevent the default form submission
 
@@ -221,9 +222,9 @@ document.querySelector('form').addEventListener('submit', async function (event)
   }
 });
 
+// Function to display recommendations in a popup
 let isPopupOpen = false;
 
-// Function to display recommendations in a popup
 function displayRecommendationsPopup(data) {
   // Check if a popup is already open
   if (isPopupOpen) {
